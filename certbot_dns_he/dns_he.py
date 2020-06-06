@@ -60,8 +60,7 @@ class Authenticator(dns_common.DNSAuthenticator):
 
         # Fetch all domains and find the target by name
         all_domains = self.dns_api.get_domains()
-
-        #Added while loop to match he.net hosted domains 
+        #Added while loop to match he.net hosted domains
         #without the hostname or subdomain for the cert
         partial_domain = domain.lower()
         domain_parts_left = domain.count('.')
@@ -100,7 +99,6 @@ class Authenticator(dns_common.DNSAuthenticator):
 
         # Fetch all domains and find the target by name
         all_domains = self.dns_api.get_domains()
-
         #Added while loop to match he.net hosted domains 
         #without the hostname or subdomain for the cert
         partial_domain = domain.lower()
