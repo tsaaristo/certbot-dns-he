@@ -60,7 +60,17 @@ class Authenticator(dns_common.DNSAuthenticator):
 
         # Fetch all domains and find the target by name
         all_domains = self.dns_api.get_domains()
-        target_domain = next((x for x in all_domains if x.name.lower() == domain.lower()), None)
+        #Added while loop to match he.net hosted domains
+        #without the hostname or subdomain for the cert
+        partial_domain = domain.lower()
+        domain_parts_left = domain.count('.')
+
+        while domain_parts_left >= 1 :
+          target_domain = next((x for x in all_domains if x.name.lower() == partial_domain), None)
+          if target_domain:
+            break
+          partial_domain = partial_domain.split('.',1)[1]
+          domain_parts_left = partial_domain.count('.')
 
         if not target_domain:
             raise errors.PluginError('Unable to find domain: {0}'.format(domain))
@@ -89,7 +99,17 @@ class Authenticator(dns_common.DNSAuthenticator):
 
         # Fetch all domains and find the target by name
         all_domains = self.dns_api.get_domains()
-        target_domain = next((x for x in all_domains if x.name.lower() == domain.lower()), None)
+        #Added while loop to match he.net hosted domains 
+        #without the hostname or subdomain for the cert
+        partial_domain = domain.lower()
+        domain_parts_left = domain.count('.')
+
+        while domain_parts_left >= 1 :
+          target_domain = next((x for x in all_domains if x.name.lower() == partial_domain), None)
+          if target_domain:
+            break
+          partial_domain = partial_domain.split('.',1)[1]
+          domain_parts_left = partial_domain.count('.')
 
         if not target_domain:
             raise errors.PluginError('Unable to find domain: {0}'.format(domain))
