@@ -2,7 +2,7 @@ from setuptools import setup
 from setuptools import find_packages
 
 
-version = '1.0.0'
+version = '1.0.1'
 
 install_requires = [
     'setuptools',
@@ -20,14 +20,14 @@ with open('README.rst') as in_file:
     long_description = in_file.read()
 
 setup(
-    name='certbot-dns-he',
+    name='certbot-dns-hurricane-electric',
     version=version,
     description='Hurricane Electric DNS Authenticator plugin for Certbot',
     long_description=long_description,
     long_description_content_type='text/x-rst',
-    url='https://github.com/TSaaristo/certbot-dns-he',
-    author='TSaaristo',
-    author_email='tero.saaristo@gmail.com',
+    url='https://github.com/studioeng/certbot-dns-hurricane-electric',
+    author='Studioeng',
+    author_email='byattsystems@gmail.com',
     license='MIT',
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
     classifiers=[
@@ -57,7 +57,7 @@ setup(
     install_requires=install_requires,
     entry_points={
         'certbot.plugins': [
-            'dns-he = certbot_dns_he.dns_he:Authenticator',
+            'dns-hurricane_electric = certbot_dns_hurricane_electric.dns_hurricane_electric:Authenticator',
         ],
     }
 )
