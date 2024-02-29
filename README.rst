@@ -8,13 +8,13 @@ cerbot-dns-he
 Installation
 ------------
 
-Install `cerbot-dns-he <https://pypi.org/project/certbot-dns-he/>`_ to your Certbot's environment with pip. For example, the line below works for me after running ``certbot-auto``.
+Install `cerbot-dns-he <https://pypi.org/project/certbot-dns-hurricane-electric/>`_ to your Certbot's environment with pip. For example, the line below works for me after running ``certbot-auto``.
 
 .. code-block:: bash
 
-  $ sudo /opt/eff.org/certbot/venv/bin/pip install cerbot-dns-he
+  $ sudo /opt/eff.org/certbot/venv/bin/pip install cerbot-dns-hurricane-electric
 
-You can also use ``git+https://github.com/TSaaristo/certbot-dns-he.git`` or clone the repository and install from the directory, but pip is recommended.
+You can also use ``git+https://github.com/studioeng/certbot-dns-hurricane-electric.git`` or clone the repository and install from the directory, but pip is recommended.
 
 Example usage
 -------------
@@ -23,8 +23,8 @@ Create a configuration file with your username and password:
 
 .. code-block:: ini
 
-  certbot_dns_he:dns_he_user = Me
-  certbot_dns_he:dns_he_pass = my HE password
+  certbot_dns_hurricane_electric:dns_he_user = Your HE username
+  certbot_dns_hurricane_electric:dns_he_pass = Your HE password
 
 and chmod it to ``600``:
 
@@ -48,3 +48,8 @@ You're done!
 | ``--certbot-dns-he:dns-he-credentials`` specifies the configuration file path.
 
 These are stored in cerbot's renewal configuration, so they'll work on your automatic renewals.
+
+Credits
+-------
+
+The original plugin by @tsaarist has been unchanged for a number of years.
